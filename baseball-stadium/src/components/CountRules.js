@@ -5,12 +5,13 @@ import Display from './Display';
 const CountRules = () => {
     const [balls, setBalls] = useState(0);
     const [strikes, setStrikes] = useState(0);
+    /*
 
     const valueRef = useRef();
     useEffect(() => {
         console.log(strikes);
     }, [strikes])
-
+    */
 
     //clicks: strike, ball, foul, hit
     const handleClick = e =>{
@@ -21,10 +22,8 @@ const CountRules = () => {
                 if (strikes < 2) {
                     setStrikes(strikes + 1);
                 }
-
             case "ball":
                 setBalls(balls + 1);
-
             case "strike":
                 if (strikes < 3) {
                     setStrikes(strikes +1);
@@ -32,7 +31,6 @@ const CountRules = () => {
                     console.log(strikes);
                     this.forceUpdate();
             }
-
             case "hit":
                 setStrikes(strikes - strikes);
                 setBalls(balls - balls );
